@@ -7,9 +7,9 @@ import { cn } from "@/libs/strings";
 export default function Home({
   searchParams,
 }: {
-  searchParams: { v?: string; bg?: string };
+  searchParams: { h?: string; bg?: string };
 }) {
-  const showSeparateHeader = searchParams.v === "2";
+  const showSeparateHeader = searchParams.h === "2";
 
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-start bg-gradient-to-b text-white overflow-x-hidden">
