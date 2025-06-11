@@ -4,11 +4,12 @@ import Button from "./components/Button";
 import Header from "./components/Header";
 import { cn } from "@/libs/strings";
 
-export default function Home({
-  searchParams,
+export default async function Home({
+  searchParams: searchParamsPromise,
 }: {
-  searchParams: { h?: string; bg?: string };
+  searchParams: Promise<{ h?: string; bg?: string }>;
 }) {
+  const searchParams = await searchParamsPromise;
   const showSeparateHeader = searchParams.h === "2";
 
   return (
