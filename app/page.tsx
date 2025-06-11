@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Button from "./components/Button";
 import Header from "./components/Header";
+import Characters from "./components/Characters";
 import { cn } from "@/libs/strings";
 
 export default async function Home({
@@ -60,6 +61,9 @@ export default async function Home({
               to consume all existence.
             </p>
           </section>
+          
+          {/* Characters Section */}
+          <Characters />
         </main>
       </div>
     </div>
