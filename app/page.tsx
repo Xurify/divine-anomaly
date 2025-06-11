@@ -7,13 +7,23 @@ import { cn } from "@/libs/strings";
 export default function Home({
   searchParams,
 }: {
-  searchParams: { v2?: string };
+  searchParams: { v?: string; bg?: string };
 }) {
-  const showSeparateHeader = searchParams.v2 === "true";
+  const showSeparateHeader = searchParams.v === "2";
 
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-start bg-gradient-to-b text-white overflow-x-hidden">
-      <div className="absolute inset-0 z-0 bg-[url('/images/background3.png')] bg-cover bg-no-repeat bg-top opacity-40 pointer-events-none" />
+      <div
+        className={cn(
+          "absolute inset-0 z-0 bg-[url('/images/background3.png')] bg-cover bg-no-repeat bg-top opacity-40 pointer-events-none",
+          {
+            "bg-[url('/images/background1.png')]":
+            searchParams.bg === "1",
+            "bg-[url('/images/background2.png')]":
+            searchParams.bg === "2",
+          }
+        )}
+      />
       <div className="relative z-20 flex flex-col items-center w-full px-4">
         <Header showSeparateHeader={showSeparateHeader} />
         <main className="flex flex-col items-center w-full">
